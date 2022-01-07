@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Question 3</title>
+    <style>
+      .body {
+        background-color: #ddd;
+        text-align: center;
+        color: white;
+      }
+      .box-row {
+        display: flex;
+        flex-direction: row;
+      }
+      .box-column {
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        border: 1px solid;
+        height: 120px;
+        width: 100%;
+        background-color: aqua;
+      }
+      .hero {
+        border: 1px solid;
+        height: 360px;
+        background-color: darkorchid;
+      }
+      .pc30 {
+        width: 30%;
+      }
+      .pc40 {
+        width: 40%;
+      }
+      .pc50 {
+        width: 50%;
+      }
+      .pc60 {
+        width: 60%;
+      }
+      .pc70 {
+        width: 70%;
+      }
+      .main-content {
+        border: 1px solid;
+        height: 500px;
+        background-color: goldenrod;
+      }
+      .sidebar {
+        height: 500px;
+        background-color: greenyellow;
+      }
+      .extra-content {
+        border: 1px solid;
+        height: 360px;
+        background-color: lightgrey;
+      }
+      .related-images {
+        border: 1px solid;
+        height: 200px;
+        background-color: green;
+      }
+      .related-post {
+        border: 1px solid;
+        height: 200px;
+        background-color: hotpink;
+      }
+      .footer {
+        border: 1px solid;
+        height: 120px;
+        width: 100%;
+        background-color: lightsalmon;
+      }
+    </style>
+  </head>
+  <body class="body">
+    <div class="box-row">
+      <div class="header"><h1>Header</h1></div>
+    </div>
+    <div class="box-row">
+      <div class="box-column pc40">
+        <div class="hero"><h1>Hero</h1></div>
+        <div class="sidebar"><h1>Sidebar</h1></div>
+      </div>
+      <div class="box-column pc60">
+        <div class="main-content">
+          <h1>Main content</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint nisi
+            soluta aspernatur ullam inventore laboriosam aperiam, at cumque,
+            vitae voluptatem mollitia enim sunt error iste quos similique illum
+            dolorum deserunt.
+          </p>
+        </div>
+        <div class="extra-content"><h1>Extra content</h1></div>
+      </div>
+    </div>
+    <div class="box-row">
+      <div class="related-images pc70"><h1>Related images</h1></div>
+      <div class="related-post pc30"><h1>Related Post</h1></div>
+    </div>
+    <div class="box-row">
+      <div class="footer"><h1>Footer</h1></div>
+    </div>
+  </body>
+</html>

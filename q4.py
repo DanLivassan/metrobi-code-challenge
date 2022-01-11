@@ -34,6 +34,6 @@ def brackets_ok(string_brackets: str) -> bool:
     return len(state) == 0
 
 
-print(brackets_ok("{(])}"))
-print(brackets_ok("{([)]}"))
-print(brackets_ok("{[]}"))
+print(brackets_ok("{"))
+print(brackets_ok("{([)}"))
+print(brackets_ok("{[danilo]asa}"))

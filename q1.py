@@ -12,8 +12,21 @@ def find_duplicate(array: List) -> List:
         if count > 1 and item not in result:
             result.append(item)
     return result
-# print(find_duplicate([1,2,3,3,3,4,5,5]))
+
+print(find_duplicate([{"name":"danilo"}, {"name":'caio'}, {"name":'caio'}]))
+
+class Person:
+
+    def __init__(self, name) -> None:
+        self.name = name
+    def __eq__(self, __o: object) -> bool:
+        return self.name==__o.name
 
 
+person = Person("Danilo")
+person2 = Person("Danilo")
 
+print((person==person2))
 
+        
+print(find_duplicate_v2([1,2,3,3,3,4,5,51,2,3,3,3,4,5,51,2,3,3,3,4,5,51,2,3,3,3,4,5,51,2,3,3,3,4,5,51,2,3,3,3,4,5,51,2,3,3,3,4,5,51,2,3,3,3,4,5,51,2,3,3,3,4,5,51,2,3,3,3,4,5,51,2,3,3,3,4,5,5]))

@@ -5,22 +5,27 @@ carrotTypes = [{"kg": 5, "price": 100}, {"kg": 7, "price": 150}, {"kg": 3, "pric
 
 def getMaxValue(carrot_types: List, capacity: int):
     """Function that returns a maximum value that one bag can hold"""
-    carrot_types = sorted(carrot_types, key=lambda item: item['kg'], reverse=True)
-    for i, carrot_type in enumerate(carrot_types, start=1):
-        if capacity % carrot_type['kg'] == 0:
-            return f"You can take {capacity / carrot_type['kg']} of carrot {i}"
+    
+    ratios = [carrot_type['price']/carrot_type['kg'] for carrot_type in carrot_types]
+    carrot_types = [{"price": carrot_type["price"], "kg":carrot_type["kg"], "ratio":ratios[i]} for i,carrot_type in enumerate(carrot_types)]
+    carrot_types = sorted(carrot_types, key=lambda item: item['ratio'])
+    min_weight = min([carrot_type['kg'] for carrot_type in carrot_types])
+    totals = {
+        "total_in_kg":0,
+        "money_spent":0,
+        "left_capacity":0
+    }
+    while capacity>=min_weight:
+        for carrot_type in carrot_types:
 
-    comb_carrots = []
-    count = len(carrot_types)
-    for i in range(count):
-        l_capacity = capacity
-        lis = [0] * len(carrot_types)
-        for j in range(i, count):
-            if carrot_types[j]['kg'] <= l_capacity:
-                lis[i] = floor(l_capacity/carrot_types[j]['kg'])
-                l_capacity = l_capacity % carrot_types[j]['kg']
-        comb_carrots.append({"qtd": lis, "capacity_left": l_capacity})
-    return sorted(comb_carrots, key=lambda item: item['capacity_left'])[0]
+            if capacity/carrot_type['kg']>=1:
+                capacity -= carrot_type['kg']
+                totals["left_capacity"]=capacity
+                totals["money_spent"]+=carrot_type["price"]
+                totals["total_in_kg"]+=carrot_type["kg"]
+                continue
+    return totals
 
 
-print(getMaxValue(carrotTypes, 37))
+totals = getMaxValue(carrotTypes, 30)
+print(f"You can get {totals['total_in_kg']}\nWill spent {totals['money_spent']}\nAnd left {totals['left_capacity']}kg of capacity in the bag")

@@ -1,5 +1,4 @@
 from typing import List
-from math import floor
 carrotTypes = [{"kg": 5, "price": 100}, {"kg": 7, "price": 150}, {"kg": 3, "price": 70}]
 
 

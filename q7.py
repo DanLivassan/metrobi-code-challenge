@@ -17,7 +17,6 @@ def getMaxValue(carrot_types: List, capacity: int):
     }
     while capacity>=min_weight:
         for carrot_type in carrot_types:
-
             if capacity/carrot_type['kg']>=1:
                 capacity -= carrot_type['kg']
                 totals["left_capacity"]=capacity
